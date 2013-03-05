@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title>SimForest</title>
+		<script>
+			//Globale Variablen//
+			var xMax = 15;
+			var yMax = 10;
+			var startRes = 1000;
+			
+			var f_building = Array(); //Welches Gebäude auf Feld i?
+			var f_res = Array();	//Wieviele Ressourcen auf Feld i?
+			var f_elec = Array();  //Ist Feld i unter Strom?
+			var f_reach = Array(); //Ist Feld i erreichbar?
+			var f_active = Array(); //Ist Feld i aktiv?
+			var cur_res = 0;
+			var cur_elec = 0;
+			var cur_people = 0;
+			var cur_smog = 0;
+			var cur_tool = "none";
+			
+			
+
+		</script>
+		<script src=http://testing.thesinforest.eu/jquery.js></script>
+		<script src=SimForest.js></script>
+		<style>
+			#game_tb
+				{
+				border-style:double;
+				border-width:6px;
+				border-color:#111111;
+				border-collapse:collapse;
+				}
+			.game_td
+				{
+				border-style:solid;
+				border-width:2px;
+				border-color:#BBBBBB;
+				text-align:center;
+				}
+			.dfield
+				{
+				width:70px;
+				height:70px;
+				text-algin:center;
+				}
+			.res_left
+				{
+				border-width:2px;
+				border-style:solid none none solid;
+				border-color:#111111;
+				}
+			.res_right
+				{
+				border-width:2px;
+				width:70px;
+				text-align:right;
+				border-style:solid solid none none;
+				border-color:#111111;
+				}
+		</style>
+		<script>
+		$(document).ready(function(){
+			createTable();
+			initGame();
+		});
+		</script>
+	</head>
+	<body>
+		<h1>TheSimForest!</h1>
+		<div id=game_div>
+			<table id="infobar" style="border-collapse:collapse;"><tr>
+				<td class="res_left"><img src="res/mini_mount.png" width="32px" height="32px"></img></td><td class="res_right"><strong id="tx_res">000000</strong></td>
+				<td style="width:70px;"></td>
+				<td class="res_left"><img src="res/mini_ele.png" width="32px" height="32px"></img></td><td class="res_right"><strong id="tx_elec">000000</strong></td>
+				<td style="width:70px;"></td>
+				<td class="res_left"><img src="res/mini_house.png" width="32px" height="32px"></img></td><td class="res_right"><strong id="tx_people">000000</strong></td>
+				<td style="width:70px;"></td>
+				<td class="res_left"><img src="res/mini_skull.png" width="32px" height="32px"></img></td><td class="res_right"><strong id="tx_smog">000000</strong></td>			
+				<td style="width:70px;"></td>
+			</tr></table>
+
+			<table id="game_tb">
+				
+			</table>
+			<br/>
+			<table id="toolbar"><tr>
+				<td><img src="res/none.png" id="current_tool" class="toolremover" width="70px" height="70px"></img></td>
+					<td><img src="res/arrow.png" id="arrow_left" class="toolremover" width="70px" height="70px"></img></td>
+				<td><img src="res/ele.png" id="tool_ele" class="tool" width="70px" height="70px"></img></td>
+				<td><img src="res/kond.png" id="tool_kond" class="tool" width="70px" height="70px"></img></td>
+				<td><img src="res/house.png" id="tool_house" class="tool" width="70px" height="70px"></img></td>
+				<td><img src="res/site.png" id="tool_site" class="tool" width="70px" height="70px"></img></td>
+				
+				<td><img src="res/border.png" id="border" width="20px" height="70px"></img></td>
+				<td><img src="res/axe.png" id="tool_axe" class="tool" width="70px" height="70px"></img></td>
+				<td><img src="res/bomb.png" id="tool_bomb" class="tool" width="70px" height="70px"></img></td>
+			</tr></table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+Strom: Gelb
+Erreichbar: Rot
+Ressourcen: "Alpha"
+
+0, R+		(GrassGrün)		: #00c060
+S, R+   (Gelb-Grün)		: #c0ff00
+E, R+   (Pink)				: #ff00ff
+B, R+	  (Orange)			: #ff8000
+
+0, R~		(BlassGrün)		: #c0ffc0
+S, R~   (Gelb)				: #ffff00
+E, R~   (Rot)					: #ff0000
+B, R~   (OrangeBraun)	: #c06000
+
+0, R-		(Weiß)				: #ffffff
+S, R-   (Blass-Gelb)	: #ffff80
+E, R-   (Blass-Rosa)	: #ffc0c0
+B, R-		(Ocker)				: #ffc060
