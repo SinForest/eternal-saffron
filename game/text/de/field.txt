@@ -1,0 +1,33 @@
+none
+Einöde
+Hier gibt es absolut nichts. Zeit, das zu ändern!
+ele
+Elektrizitätswerk
+Es ist doch schön, wie einfach sich Ruhe und Frieden in Elektrizität umwandeln lassen, nicht wahr?
+house
+Wohnhaus
+Hier wohnt das schlimmste Raubtier, dass dieser Planet je gesehen hat. Und das letzte. Wollen wir?
+hq
+Hauptquartier
+Dein ganzer Stolz! Pass auf, dass hier nicht die Lichter ausgehen, sonst geht gleich garnichts mehr!
+kond
+Konduktorkugel
+Die neuste Technologie, um Energie von A nach B zu bekommen. Allerdings muss A dafür erstmal Energie haben.
+lake
+See
+Siehst du, wie sich die Vögel und Fische am reinen Wasser erfreuen? Widerlich...
+mount
+Berg
+Manche sehen hier nur einen Haufen Steine. Weißt du, was ich sehe? Geld! Geld begraben in einem Haufen Steine!
+mud
+Müll-Tümpel
+Riechst du das? Das ist der Geruch des Erfolgs. Der sauer-ätzende, stechende Geruch des Sieges!
+site
+Ausgrabungsstätte
+Das nenne ich Fortschritt! Wir bekommen alles, was wir wollen, und müssen nicht einmal hingehen! Es lebe die Technik!
+skull
+Totes Land
+Ich denke, hier sind wir fertig...
+tree
+Wald
+Das es sich diese wiederlichen "Lebewesen" erlauben, MEINE Luft mit Sauerstoff zu verpesten. Unerträglich...

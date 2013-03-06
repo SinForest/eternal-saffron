@@ -5,7 +5,8 @@
 			//Globale Variablen//
 			var xMax = 15;
 			var yMax = 10;
-			var startRes = 1000;
+			var startRes = 10000;
+			var loc = "de";
 			
 			var f_building = Array(); //Welches Gebäude auf Feld i?
 			var f_res = Array();	//Wieviele Ressourcen auf Feld i?
@@ -17,58 +18,25 @@
 			var cur_people = 0;
 			var cur_smog = 0;
 			var cur_tool = "none";
+			var cur_field = -1;
+			var hq_pos = -1;
+			var texts = Array();
 			
-			
-
 		</script>
 		<script src=http://testing.thesinforest.eu/jquery.js></script>
 		<script src=SimForest.js></script>
-		<style>
-			#game_tb
-				{
-				border-style:double;
-				border-width:6px;
-				border-color:#111111;
-				border-collapse:collapse;
-				}
-			.game_td
-				{
-				border-style:solid;
-				border-width:2px;
-				border-color:#BBBBBB;
-				text-align:center;
-				}
-			.dfield
-				{
-				width:70px;
-				height:70px;
-				text-algin:center;
-				}
-			.res_left
-				{
-				border-width:2px;
-				border-style:solid none none solid;
-				border-color:#111111;
-				}
-			.res_right
-				{
-				border-width:2px;
-				width:70px;
-				text-align:right;
-				border-style:solid solid none none;
-				border-color:#111111;
-				}
-		</style>
+		<link rel="stylesheet" type="text/css" href="def_style.css">
 		<script>
 		$(document).ready(function(){
 			createTable();
 			initGame();
+			setInterval(function(){tick()},1000);
 		});
 		</script>
 	</head>
 	<body>
-		<h1>TheSimForest!</h1>
-		<div id=game_div>
+		<!--h1>TheSimForest!</h1-->
+		<div id=game_div style="float:left;width:1300px;">
 			<table id="infobar" style="border-collapse:collapse;"><tr>
 				<td class="res_left"><img src="res/mini_mount.png" width="32px" height="32px"></img></td><td class="res_right"><strong id="tx_res">000000</strong></td>
 				<td style="width:70px;"></td>
@@ -79,9 +47,7 @@
 				<td class="res_left"><img src="res/mini_skull.png" width="32px" height="32px"></img></td><td class="res_right"><strong id="tx_smog">000000</strong></td>			
 				<td style="width:70px;"></td>
 			</tr></table>
-
 			<table id="game_tb">
-				
 			</table>
 			<br/>
 			<table id="toolbar"><tr>
@@ -90,12 +56,44 @@
 				<td><img src="res/ele.png" id="tool_ele" class="tool" width="70px" height="70px"></img></td>
 				<td><img src="res/kond.png" id="tool_kond" class="tool" width="70px" height="70px"></img></td>
 				<td><img src="res/house.png" id="tool_house" class="tool" width="70px" height="70px"></img></td>
+				<td><img src="res/mud.png" id="tool_mud" class="tool" width="70px" height="70px"></img></td>				
 				<td><img src="res/site.png" id="tool_site" class="tool" width="70px" height="70px"></img></td>
-				
-				<td><img src="res/border.png" id="border" width="20px" height="70px"></img></td>
+					<td><img src="res/border.png" id="border" width="20px" height="70px"></img></td>
 				<td><img src="res/axe.png" id="tool_axe" class="tool" width="70px" height="70px"></img></td>
 				<td><img src="res/bomb.png" id="tool_bomb" class="tool" width="70px" height="70px"></img></td>
+					<td><img src="res/border.png" id="border2" width="20px" height="70px"></img></td>
+				<td><img src="res/blackout.png" id="warn_elec" width="70px" height="70px" style="display:none"></img></td>
+				<td><img src="res/strike.png" id="warn_people" width="70px" height="70px" style="display:none"></img></td>
+				<td><img src="res/fallout.png" id="warn_hq" width="70px" height="70px"></img></td>
 			</tr></table>
 		</div>
+		<div id="tooltip_div">
+			<table id="tooltips">
+				<tr><td class="tooltip"><div class="tooltip" id="upper_tooltip">
+					<div style="width:80px;float:left;"><img id="ut_img" src="res/skull.png"></img></div>
+					<div style="width:300px;"><h1 id="ut_head" style="text-align:center;">Willkommen</h2></div>
+					<div style="clear:both"></div>
+					<table>
+						<tr>
+							<td><strong>Ressourcen:</strong></td>
+							<td id="td_this_res">---</td>
+						</tr>
+						<tr>
+							<td><strong>Strom:</strong></td>
+							<td id="td_this_elec">---</td>
+						</tr>
+						<tr>
+							<td><strong>Erreichbar:</strong></td>
+							<td id="td_this_reach">---</td>
+						</tr>
+					</table>
+					<div id="ut_txt"></div>
+				</div></td></tr>
+				<tr><td class="tooltip"><div class="tooltip" id="bottom_tooltip">
+					<img id="bt_img" src="res/none.png"></img>
+				</div></td></tr>
+			</table>
+		</div>
+		<div id="invis" style="display:none;"></div>
 	</body>
 </html>

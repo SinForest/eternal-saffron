@@ -1,0 +1,55 @@
+#game_tb
+	{
+	border-style:double;
+	border-width:6px;
+	border-color:#111111;
+	border-collapse:collapse;
+	}
+.game_td
+	{
+	border-style:solid;
+	border-width:2px;
+	border-color:#BBBBBB;
+	text-align:center;
+	}
+.dfield
+	{
+	width:70px;
+	height:70px;
+	text-algin:center;
+	}
+.res_left
+	{
+	border-width:2px;
+	border-style:solid none none solid;
+	border-color:#111111;
+	}
+.res_right
+	{
+	border-width:2px;
+	width:70px;
+	text-align:right;
+	border-style:solid solid none none;
+	border-color:#111111;
+	padding-right:2px;
+	}
+#tooltips
+	{
+	border-style:double;
+	border-width:6px;
+	border-color:#111111;
+	border-collapse:collapse;
+	width:400px;
+	background-color:#ab9cf0;
+	}
+td.tooltip
+	{
+		border-style:solid;
+		border-color:#111111;
+		border-width:3px;
+	}
+div.tooltip
+	{
+		width:400px;
+		margin:5px;
+	}

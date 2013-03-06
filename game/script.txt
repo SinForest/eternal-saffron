@@ -7,12 +7,12 @@ S, R+   (Gelb-Grün)		: #c0ff00
 E, R+   (Pink)				: #ff00ff
 B, R+	  (Orange)			: #ff8000
 
-0, R~		(BlassGrün)		: #c0ffc0
+0, R~		(BlassGrün)		: #b0ffb0
 S, R~   (Gelb)				: #ffff00
 E, R~   (Rot)					: #ff0000
 B, R~   (OrangeBraun)	: #c06000
 
-0, R-		(Weiß)				: #ffffff
+0, R-		(Fast-Weiß)		: #e0ffe0
 S, R-   (Blass-Gelb)	: #ffff80
 E, R-   (Blass-Rosa)	: #ffc0c0
 B, R-		(Ocker)				: #ffc060
